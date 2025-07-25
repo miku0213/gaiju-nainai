@@ -76,7 +76,7 @@
 </form>
 <script>
 function validateForm(event) {
-  event.preventDefault();
+  event.preventDefault();  // 送信を止める
 
   const nameInput = document.getElementById('name');
   const telInput = document.getElementById('tel');
@@ -85,7 +85,7 @@ function validateForm(event) {
 
   let isValid = true;
 
-  // 名前：数字が含まれていないか
+  // 名前のチェック
   if (/\d/.test(nameInput.value)) {
     nameError.textContent = "名前に数字は使えません";
     isValid = false;
@@ -96,7 +96,7 @@ function validateForm(event) {
     nameError.textContent = "";
   }
 
-  // 電話番号：数字のみか
+  // 電話番号のチェック
   if (!/^\d+$/.test(telInput.value)) {
     telError.textContent = "電話番号は数字のみで入力してください";
     isValid = false;
@@ -104,9 +104,10 @@ function validateForm(event) {
     telError.textContent = "";
   }
 
-  // 全部OKなら送信
+  // エラーがなければ送信（ここで form.submit() は使わない）
   if (isValid) {
-    document.getElementById("contact-form").submit();
+    // 通常のフォーム送信を再度有効にする
+    event.target.submit(); 
   }
 
   return false;

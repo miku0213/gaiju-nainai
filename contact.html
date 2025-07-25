@@ -46,72 +46,52 @@
 </head>
 <body>
   <h1>お問い合わせフォーム</h1>
-  <form id="contact-form" onsubmit="return validateForm(event)" novalidate>
-  <!-- 名前 -->
-  <label>お名前<br>
-    <input type="text" id="name" name="name" style="width:300px; padding:8px;">
-    <div id="name-error" style="color:red; font-size:14px;"></div>
-  </label><br><br>
+　　<form id="contact-form" onsubmit="return validateForm(event)">
+  　　<label>お名前
+    　　<input type="text" id="name" name="name">
+    　　<div id="name-error" style="color:red;"></div>
+  　　</label>
 
-  <!-- 電話番号 -->
-  <label>電話番号<br>
-    <input type="text" id="tel" name="tel" style="width:300px; padding:8px;">
-    <div id="tel-error" style="color:red; font-size:14px;"></div>
-  </label><br><br>
+  　　<label>電話番号
+   　　 <input type="text" id="tel" name="tel">
+  　　  <div id="tel-error" style="color:red;"></div>
+ 　　 </label>
 
-  <!-- メール -->
-  <label>メールアドレス<br>
-    <input type="email" name="email" required style="width:300px; padding:8px;">
-  </label><br><br>
+  　<button type="submit">送信する</button>
+　</form>
 
-  <!-- お問い合わせ内容 -->
-  <label>お問い合わせ内容<br>
-    <textarea name="message" rows="5" required style="width:300px; padding:8px;"></textarea>
-  </label><br><br>
-
-  <button type="submit"
-          style="background:#2b5b4b; color:white; padding:10px 20px; border:none; border-radius:5px;">
-    送信する
-  </button>
-</form>
 <script>
 function validateForm(event) {
-  event.preventDefault();  // 送信を止める
+  event.preventDefault(); // まず送信を止める
 
-  const nameInput = document.getElementById('name');
-  const telInput = document.getElementById('tel');
-  const nameError = document.getElementById('name-error');
-  const telError = document.getElementById('tel-error');
+  const name = document.getElementById("name");
+  const tel = document.getElementById("tel");
+  const nameError = document.getElementById("name-error");
+  const telError = document.getElementById("tel-error");
 
-  let isValid = true;
+  let valid = true;
 
-  // 名前のチェック
-  if (/\d/.test(nameInput.value)) {
+  // 名前は数字が含まれない
+  if (/\d/.test(name.value)) {
     nameError.textContent = "名前に数字は使えません";
-    isValid = false;
-  } else if (nameInput.value.trim() === "") {
-    nameError.textContent = "名前を入力してください";
-    isValid = false;
+    valid = false;
   } else {
     nameError.textContent = "";
   }
 
-  // 電話番号のチェック
-  if (!/^\d+$/.test(telInput.value)) {
+  // 電話番号は数字のみ
+  if (!/^\d+$/.test(tel.value)) {
     telError.textContent = "電話番号は数字のみで入力してください";
-    isValid = false;
+    valid = false;
   } else {
     telError.textContent = "";
   }
 
-  // エラーがなければ送信（ここで form.submit() は使わない）
-  if (isValid) {
-    // 通常のフォーム送信を再度有効にする
-    event.target.submit(); 
+  if (valid) {
+    event.target.submit(); // ✅ 安全な送信
   }
-
-  return false;
 }
+
 </script>
 
 

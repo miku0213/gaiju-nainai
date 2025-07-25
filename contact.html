@@ -46,33 +46,27 @@
 </head>
 <body>
   <h1>お問い合わせフォーム</h1>
-  <form>
-  <!-- 名前（英字・ひらがな・カタカナのみ） -->
+  <form id="contact-form" onsubmit="return validateForm(event)">
+  <!-- 名前 -->
   <label>お名前<br>
-    <input type="text" name="name" required 
-           pattern="^[^\d]+$" 
-           title="数字は使えません" 
-           style="width:300px; padding:8px;">
+    <input type="text" id="name" name="name" required style="width:300px; padding:8px;">
+    <div id="name-error" style="color:red; font-size:14px;"></div>
   </label><br><br>
 
-  <!-- 電話番号（数字のみ） -->
+  <!-- 電話番号 -->
   <label>電話番号<br>
-    <input type="tel" name="tel" required 
-           pattern="\d+" 
-           title="数字のみを入力してください" 
-           style="width:300px; padding:8px;">
+    <input type="tel" id="tel" name="tel" required style="width:300px; padding:8px;">
+    <div id="tel-error" style="color:red; font-size:14px;"></div>
   </label><br><br>
 
-  <!-- メールアドレス -->
+  <!-- メール -->
   <label>メールアドレス<br>
-    <input type="email" name="email" required 
-           style="width:300px; padding:8px;">
+    <input type="email" name="email" required style="width:300px; padding:8px;">
   </label><br><br>
 
-  <!-- お問い合わせ内容 -->
+  <!-- 内容 -->
   <label>お問い合わせ内容<br>
-    <textarea name="message" rows="5" required 
-              style="width:300px; padding:8px;"></textarea>
+    <textarea name="message" rows="5" required style="width:300px; padding:8px;"></textarea>
   </label><br><br>
 
   <button type="submit"

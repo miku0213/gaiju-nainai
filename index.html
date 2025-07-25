@@ -107,6 +107,30 @@
   <section class="cta">
     <p>お困りの際は、まずはお気軽にご相談ください！</p>
     <button onclick="document.getElementById('contact-form').style.display='block';">無料相談はこちら</button>
+    <div id="contact-form" style="display:none; margin-top: 30px;">
+  <h2>お問い合わせフォーム</h2>
+  <form>
+    <label>お名前<br>
+      <input type="text" name="name" required style="width:100%; padding:8px;">
+    </label><br><br>
+
+    <label>電話番号<br>
+      <input type="tel" name="tel" style="width:100%; padding:8px;">
+    </label><br><br>
+
+    <label>メールアドレス<br>
+      <input type="email" name="email" required style="width:100%; padding:8px;">
+    </label><br><br>
+
+    <label>お問い合わせ内容<br>
+      <textarea name="message" rows="5" required style="width:100%; padding:8px;"></textarea>
+    </label><br><br>
+
+    <button type="submit" style="background:#2b5b4b; color:white; padding:10px 20px; border:none; border-radius:5px;">
+      送信する
+    </button>
+  </form>
+</div>
   </section>
 
   <footer>

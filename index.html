@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>○○害獣駆除サービス</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f7f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #2b5b4b;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #2b5b4b;
+    }
+    .services, .features {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .item {
+      background: white;
+      border-radius: 8px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .cta {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .cta button {
+      background: #2b5b4b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #e5e5e5;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (min-width: 600px) {
+      .services, .features {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .item {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>○○害獣駆除サービス</h1>
+    <p>ネズミ・ハクビシン・コウモリなど<br>迅速・丁寧に対応します！</p>
+  </header>
+
+  <section class="section">
+    <h2>対応サービス</h2>
+    <div class="services">
+      <div class="item">✅ ネズミ駆除</div>
+      <div class="item">✅ ハクビシン対策</div>
+      <div class="item">✅ コウモリ侵入防止</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>当社の強み</h2>
+    <div class="features">
+      <div class="item">✔ 見積もり無料＆明朗会計</div>
+      <div class="item">✔ 地域密着・即日対応OK</div>
+      <div class="item">✔ 再発防止までしっかりサポート</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <p>お困りの際は、まずはお気軽にご相談ください！</p>
+    <button onclick="alert('このボタンはまだリンクされていません');">無料相談はこちら</button>
+  </section>
+
+  <footer>
+    © 2025 ○○害獣駆除サービス｜〒000-0000 〇〇県〇〇市〇〇町1-2-3
+  </footer>
+
+</body>
+</html>

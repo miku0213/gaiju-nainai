@@ -47,19 +47,39 @@
 <body>
   <h1>お問い合わせフォーム</h1>
   <form>
-    <label>お名前</label>
-    <input type="text" name="name" required>
+  <!-- 名前（英字・ひらがな・カタカナのみ） -->
+  <label>お名前<br>
+    <input type="text" name="name" required 
+           pattern="^[^\d]+$" 
+           title="数字は使えません" 
+           style="width:300px; padding:8px;">
+  </label><br><br>
 
-    <label>電話番号</label>
-    <input type="tel" name="tel">
+  <!-- 電話番号（数字のみ） -->
+  <label>電話番号<br>
+    <input type="tel" name="tel" required 
+           pattern="\d+" 
+           title="数字のみを入力してください" 
+           style="width:300px; padding:8px;">
+  </label><br><br>
 
-    <label>メールアドレス</label>
-    <input type="email" name="email" required>
+  <!-- メールアドレス -->
+  <label>メールアドレス<br>
+    <input type="email" name="email" required 
+           style="width:300px; padding:8px;">
+  </label><br><br>
 
-    <label>お問い合わせ内容</label>
-    <textarea name="message" rows="5" required></textarea>
+  <!-- お問い合わせ内容 -->
+  <label>お問い合わせ内容<br>
+    <textarea name="message" rows="5" required 
+              style="width:300px; padding:8px;"></textarea>
+  </label><br><br>
 
-    <button type="submit">送信する</button>
-  </form>
+  <button type="submit"
+          style="background:#2b5b4b; color:white; padding:10px 20px; border:none; border-radius:5px;">
+    送信する
+  </button>
+</form>
+
 </body>
 </html>

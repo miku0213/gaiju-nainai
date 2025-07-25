@@ -46,16 +46,16 @@
 </head>
 <body>
   <h1>お問い合わせフォーム</h1>
-  <form id="contact-form" onsubmit="return validateForm(event)">
+  <form id="contact-form" onsubmit="return validateForm(event)" novalidate>
   <!-- 名前 -->
   <label>お名前<br>
-    <input type="text" id="name" name="name" required style="width:300px; padding:8px;">
+    <input type="text" id="name" name="name" style="width:300px; padding:8px;">
     <div id="name-error" style="color:red; font-size:14px;"></div>
   </label><br><br>
 
   <!-- 電話番号 -->
   <label>電話番号<br>
-    <input type="tel" id="tel" name="tel" required style="width:300px; padding:8px;">
+    <input type="text" id="tel" name="tel" style="width:300px; padding:8px;">
     <div id="tel-error" style="color:red; font-size:14px;"></div>
   </label><br><br>
 
@@ -64,7 +64,7 @@
     <input type="email" name="email" required style="width:300px; padding:8px;">
   </label><br><br>
 
-  <!-- 内容 -->
+  <!-- お問い合わせ内容 -->
   <label>お問い合わせ内容<br>
     <textarea name="message" rows="5" required style="width:300px; padding:8px;"></textarea>
   </label><br><br>
@@ -74,6 +74,45 @@
     送信する
   </button>
 </form>
+<script>
+function validateForm(event) {
+  event.preventDefault();
+
+  const nameInput = document.getElementById('name');
+  const telInput = document.getElementById('tel');
+  const nameError = document.getElementById('name-error');
+  const telError = document.getElementById('tel-error');
+
+  let isValid = true;
+
+  // 名前：数字が含まれていないか
+  if (/\d/.test(nameInput.value)) {
+    nameError.textContent = "名前に数字は使えません";
+    isValid = false;
+  } else if (nameInput.value.trim() === "") {
+    nameError.textContent = "名前を入力してください";
+    isValid = false;
+  } else {
+    nameError.textContent = "";
+  }
+
+  // 電話番号：数字のみか
+  if (!/^\d+$/.test(telInput.value)) {
+    telError.textContent = "電話番号は数字のみで入力してください";
+    isValid = false;
+  } else {
+    telError.textContent = "";
+  }
+
+  // 全部OKなら送信
+  if (isValid) {
+    document.getElementById("contact-form").submit();
+  }
+
+  return false;
+}
+</script>
+
 
 </body>
 </html>

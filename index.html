@@ -177,6 +177,39 @@
   color: inherit;
   display: block;
 }
+        .service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background-color 0.2s ease;
+}
+
+.service-item:hover {
+  background-color: #f0f0f0;
+}
+
+.service-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.service-text {
+  font-size: 16px;
+  color: #222;
+}
+
 
       }
     </style>
@@ -202,35 +235,28 @@
 
     <section class="section">
       <h2>対応サービス</h2>
-      <div class="box-list">
-        <a href="nezumi.html" class="box-link">
-         <div class="box">
-          <img src="images/icons/icon-nezumi.png" class="check-icon" />
-          ネズミ駆除
-         </div>
-       </a>
+      <div class="service-list">
+  <a href="nezumi.html" class="service-item">
+    <img src="images/icons/icon-nezumi.png" alt="ネズミ駆除" class="service-icon" />
+    <span class="service-text">ネズミ駆除</span>
+  </a>
 
-       <a href="hakubisin.html" class="box-link">
-        <div class="box">
-         <img src="images/icons/icon-hakubisin.png" class="check-icon" />
-         ハクビシン対策
-        </div>
-       </a>
+  <a href="hakubisin.html" class="service-item">
+    <img src="images/icons/icon-hakubisin.png" alt="ハクビシン対策" class="service-icon" />
+    <span class="service-text">ハクビシン対策</span>
+  </a>
 
-      <a href="koumori.html" class="box-link">
-       <div class="box">
-        <img src="images/icons/icon-koumori.png" class="check-icon" />
-        コウモリ侵入防止
-      </div>
-      </a>
+  <a href="koumori.html" class="service-item">
+    <img src="images/icons/icon-koumori.png" alt="コウモリ侵入防止" class="service-icon" />
+    <span class="service-text">コウモリ侵入防止</span>
+  </a>
 
-     <a href="araiguma.html" class="box-link">
-      <div class="box">
-       <img src="images/icons/icon-araiguma.png" class="check-icon" />
-       アライグマ駆除
-     </div>
-    </a>
-    </div>
+  <a href="araiguma.html" class="service-item">
+    <img src="images/icons/icon-araiguma.png" alt="アライグマ駆除" class="service-icon" />
+    <span class="service-text">アライグマ駆除</span>
+  </a>
+</div>
+
 
     </section>
 

@@ -16,21 +16,36 @@
 
     header {
       background: url("images/top/main-visual.png") no-repeat center/cover;
+      height: 80vh; /* ビューポートの80%を使う */
       color: white;
-      padding: 150px 20px; /* 高さ調整 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* 半透明の黒背景で文字を見やすく */
+      z-index: 0;
+    }
+
+    header h1, header p {
+      z-index: 1;
     }
 
     header h1 {
       margin: 0;
-      font-size: 28px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      font-size: 32px;
     }
 
     header p {
       margin-top: 10px;
-      font-size: 16px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      font-size: 18px;
     }
 
     .section {

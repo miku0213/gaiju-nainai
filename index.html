@@ -71,14 +71,10 @@
 
     /* ===== メインビジュアル ===== */
     .main-visual {
-      background: url("images/top/main-visual.png") center center / cover no-repeat;
-      height: 180px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      margin-top: 60px; /* ヘッダーと被らないように調整 */
-    }
+  background: url("images/top/main-visual.png") center center / contain no-repeat;
+  background-color: #f7f9fa; /* 背景の余白色（必要なら） */
+  height: 180px;
+}
 
     .main-visual-content {
       background: rgba(0,0,0,0.4);

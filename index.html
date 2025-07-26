@@ -15,37 +15,30 @@
     }
 
     header {
-      background: url("images/top/main-visual.png") no-repeat center/cover;
-      height: 80vh; /* ビューポートの80%を使う */
-      color: white;
+      background: url("images/top/main-visual.png") center center / cover no-repeat;
+      height: 300px; /* 高さ調整ポイント */
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       position: relative;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5); /* 半透明の黒背景で文字を見やすく */
-      z-index: 0;
+    .header-content {
+      background: rgba(0, 0, 0, 0.4); /* 文字を読みやすくするため半透明背景 */
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
     }
 
-    header h1, header p {
-      z-index: 1;
-    }
-
-    header h1 {
+    .header-content h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 28px;
     }
 
-    header p {
+    .header-content p {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .section {
@@ -109,8 +102,10 @@
 <body>
 
   <header>
-    <h1>害獣ないないサービス</h1>
-    <p>ネズミ・ハクビシン・コウモリ・アライグマなど<br>迅速・丁寧に対応します！</p>
+    <div class="header-content">
+      <h1>害獣ないないサービス</h1>
+      <p>ネズミ・ハクビシン・コウモリ・アライグマなど<br>迅速・丁寧に対応します！</p>
+    </div>
   </header>
 
   <section class="section">

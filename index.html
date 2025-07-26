@@ -14,33 +14,78 @@
       line-height: 1.6;
     }
 
-    header {
+    /* ===== ヘッダー ===== */
+    .top-header {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 30px;
+      width: 30px;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .top-header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .phone {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .cta-button {
+      background: #2b5b4b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 0;
+    }
+
+    /* ===== メインビジュアル ===== */
+    .main-visual {
       background: url("images/top/main-visual.png") center center / cover no-repeat;
-      height: 300px; /* 高さ調整ポイント */
+      height: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
+      margin-top: 60px; /* ヘッダーの高さ分 */
     }
 
-    .header-content {
-      background: rgba(0, 0, 0, 0.4); /* 文字を読みやすくするため半透明背景 */
+    .main-visual-content {
+      background: rgba(0,0,0,0.4);
       padding: 20px;
       border-radius: 8px;
       color: white;
     }
 
-    .header-content h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .header-content p {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
+    /* ===== セクション ===== */
     .section {
       padding: 40px 20px;
       max-width: 800px;
@@ -82,7 +127,8 @@
     }
 
     footer {
-      background: #e5e5e5;
+      background: #2b5b4b;
+      color: white;
       text-align: center;
       padding: 20px;
       font-size: 14px;
@@ -101,13 +147,27 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-content">
+  <!-- ヘッダー -->
+  <div class="top-header">
+    <div class="logo">
+      <img src="images/icons/icon-favi.png" alt="ロゴ" />
+      <span>害獣ないない</span>
+    </div>
+    <div class="top-header-right">
+      <div class="phone">XXX-XXXX-XXXX</div>
+      <a href="contact.html" class="cta-button">お問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- メイン画像 -->
+  <div class="main-visual">
+    <div class="main-visual-content">
       <h1>害獣ないないサービス</h1>
       <p>ネズミ・ハクビシン・コウモリ・アライグマなど<br>迅速・丁寧に対応します！</p>
     </div>
-  </header>
+  </div>
 
+  <!-- 対応サービス -->
   <section class="section">
     <h2>対応サービス</h2>
     <div class="services">
@@ -118,6 +178,7 @@
     </div>
   </section>
 
+  <!-- 当社の強み -->
   <section class="section">
     <h2>当社の強み</h2>
     <div class="features">
@@ -127,12 +188,14 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <div class="cta">
     <a href="contact.html">
       <button>無料相談はこちら</button>
     </a>
   </div>
 
+  <!-- フッター -->
   <footer>
     © 2025 害獣ないない｜〒460-XXXX 愛知県名古屋市中区〇〇町1-2-3
   </footer>

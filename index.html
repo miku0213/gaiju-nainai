@@ -96,8 +96,8 @@
       }
 
       #contact {
-        padding-top: 100px;  /* ヘッダー分の余白 */
-        margin-top: -100px;  /* ヘッダー分を打ち消す */
+        padding-top: 100px;
+        margin-top: -100px;
       }
 
       .box-list {
@@ -134,6 +134,66 @@
         width: fit-content;
       }
 
+      .header-nav {
+        display: flex;
+        justify-content: center;
+        background-color: #226d50;
+        padding: 12px 0;
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .nav-btn {
+        color: white;
+        text-decoration: none;
+        padding: 10px 16px;
+        margin: 0 10px;
+        border-radius: 4px;
+        transition: 0.3s;
+        font-weight: bold;
+      }
+
+      .nav-btn:hover {
+        background-color: white;
+        color: #226d50;
+        border: 1px solid #226d50;
+      }
+
+      .service-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .service-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        background-color: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.2s ease;
+      }
+
+      .service-item:hover {
+        background-color: #f0f0f0;
+      }
+
+      .service-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+      }
+
+      .service-text {
+        font-size: 16px;
+        color: #222;
+      }
+
       @media (max-width: 600px) {
         .box {
           flex: 1 1 100%;
@@ -150,104 +210,13 @@
           font-size: 13px;
         }
 
-        .check-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.box {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin-bottom: 12px;
-  transition: transform 0.2s ease;
-}
-
-.box:hover {
-  transform: scale(1.02);
-}
-
-.box-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-        .service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.service-item {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  background-color: white;
-  padding: 12px 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: background-color 0.2s ease;
-}
-
-.service-item:hover {
-  background-color: #f0f0f0;
-}
-
-.service-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 12px;
-}
-
-.service-text {
-  font-size: 16px;
-  color: #222;
-}
         .header-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #226d50;
-  padding: 12px 0;
-  position: fixed;
-  top: 70px; /* 上段ヘッダーの高さと同じ */
-  width: 100%;
-  z-index: 999;
-}
-        @media (max-width: 600px) {
-  .header-nav {
-    flex-direction: column;
-  }
+          flex-direction: column;
+        }
 
-  .nav-btn {
-    margin: 6px 0;
-  }
-}
-
-
-.nav-btn {
-  color: white;
-  text-decoration: none;
-  padding: 10px 16px;
-  margin: 0 10px;
-  border-radius: 4px;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.nav-btn:hover {
-  background-color: white;
-  color: #226d50;
-  border: 1px solid #226d50;
-}
-
-
-
+        .nav-btn {
+          margin: 6px 0;
+        }
       }
     </style>
   </head>
@@ -264,12 +233,14 @@
         </div>
       </div>
     </header>
-<nav class="header-nav">
-  <a href="flow.html" class="nav-btn">施工までの流れ</a>
-  <a href="reason.html" class="nav-btn">選ばれる理由</a>
-  <a href="plan.html" class="nav-btn">料金プラン</a>
-  <a href="faq.html" class="nav-btn">よくある質問</a>
-</nav>
+
+    <nav class="header-nav">
+      <a href="flow.html" class="nav-btn">施工までの流れ</a>
+      <a href="reason.html" class="nav-btn">選ばれる理由</a>
+      <a href="plan.html" class="nav-btn">料金プラン</a>
+      <a href="faq.html" class="nav-btn">よくある質問</a>
+    </nav>
+
     <div class="main-visual">
       <img src="./images/top/main-visual.png" alt="メインビジュアル" />
     </div>
@@ -277,28 +248,23 @@
     <section class="section">
       <h2>対応サービス</h2>
       <div class="service-list">
-  <a href="nezumi.html" class="service-item">
-    <img src="images/icons/icon-nezumi.png" alt="ネズミ駆除" class="service-icon" />
-    <span class="service-text">ネズミ駆除</span>
-  </a>
-
-  <a href="hakubisin.html" class="service-item">
-    <img src="images/icons/icon-hakubisin.png" alt="ハクビシン対策" class="service-icon" />
-    <span class="service-text">ハクビシン対策</span>
-  </a>
-
-  <a href="koumori.html" class="service-item">
-    <img src="images/icons/icon-koumori.png" alt="コウモリ侵入防止" class="service-icon" />
-    <span class="service-text">コウモリ侵入防止</span>
-  </a>
-
-  <a href="araiguma.html" class="service-item">
-    <img src="images/icons/icon-araiguma.png" alt="アライグマ駆除" class="service-icon" />
-    <span class="service-text">アライグマ駆除</span>
-  </a>
-</div>
-
-
+        <a href="nezumi.html" class="service-item">
+          <img src="images/icons/icon-nezumi.png" alt="ネズミ駆除" class="service-icon" />
+          <span class="service-text">ネズミ駆除</span>
+        </a>
+        <a href="hakubisin.html" class="service-item">
+          <img src="images/icons/icon-hakubisin.png" alt="ハクビシン対策" class="service-icon" />
+          <span class="service-text">ハクビシン対策</span>
+        </a>
+        <a href="koumori.html" class="service-item">
+          <img src="images/icons/icon-koumori.png" alt="コウモリ侵入防止" class="service-icon" />
+          <span class="service-text">コウモリ侵入防止</span>
+        </a>
+        <a href="araiguma.html" class="service-item">
+          <img src="images/icons/icon-araiguma.png" alt="アライグマ駆除" class="service-icon" />
+          <span class="service-text">アライグマ駆除</span>
+        </a>
+      </div>
     </section>
 
     <section class="section">
@@ -308,9 +274,9 @@
         <div class="box">✓ 地域密着・即日対応OK</div>
         <div class="box">✓ 再発防止までしっかりサポート</div>
       </div>
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn">無料相談はこちら</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn">無料相談はこちら</a>
     </section>
 
-        <footer>&copy; 2025 害獣ないない.com All Rights Reserved.</footer>
+    <footer>&copy; 2025 害獣ないない.com All Rights Reserved.</footer>
   </body>
 </html>

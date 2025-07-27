@@ -218,54 +218,69 @@
           margin: 6px 0;
         }
 
+        /* 共通で非表示にする */
         .hamburger {
           display: none;
-          flex-direction: column;
-          cursor: pointer;
-          z-index: 1001;
         }
 
-        .hamburger span {
-          width: 25px;
-          height: 3px;
-          background-color: #226d50;
-          margin: 4px 0;
-          transition: 0.4s;
-        }
-
+        /* スマホのときに表示 */
         @media (max-width: 600px) {
           .hamburger {
             display: flex;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-          }
-
-          .header-nav {
-            display: none;
             flex-direction: column;
             position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: #226d50;
+            right: 20px;
+            top: 20px;
+            z-index: 1100;
+            /* ボタンの上に */
           }
 
-          .header-nav.show {
-            display: flex;
-          }
-
-          .nav-btn {
-            color: white;
-            padding: 12px 20px;
-            text-align: left;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-          }
-
-          .nav-btn:hover {
-            background-color: #114a36;
+          .header-right {
+            display: none;
+            /* スマホでは非表示にする（重なり防止） */
           }
         }
+
+        @media (max-width: 600px) {
+          .header-right {
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 12px;
+            position: absolute;
+            top: 70px;
+            right: 10px;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+          }
+        }
+
+        .header-nav {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: #226d50;
+        }
+
+        .header-nav.show {
+          display: flex;
+        }
+
+        .nav-btn {
+          color: white;
+          padding: 12px 20px;
+          text-align: left;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-btn:hover {
+          background-color: #114a36;
+        }
+      }
       }
     </style>
   </head>
@@ -276,17 +291,17 @@
           <img src="./images/icons/icon-favi.png" alt="ロゴ" />
           <span>害獣ないない.com</span>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="header-right">
           <span>XXX-XXXX-XXXX</span>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank">お問い合わせ</a>
         </div>
       </div>
     </header>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <nav class="header-nav" id="navMenu">
       <a href="flow.html" class="nav-btn">施工までの流れ</a>
       <a href="reason.html" class="nav-btn">選ばれる理由</a>

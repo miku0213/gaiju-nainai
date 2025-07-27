@@ -219,54 +219,53 @@
         }
 
         .hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 1001;
-}
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          z-index: 1001;
+        }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: #226d50;
-  margin: 4px 0;
-  transition: 0.4s;
-}
+        .hamburger span {
+          width: 25px;
+          height: 3px;
+          background-color: #226d50;
+          margin: 4px 0;
+          transition: 0.4s;
+        }
 
-@media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+        @media (max-width: 600px) {
+          .hamburger {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+          }
 
-  .header-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #226d50;
-  }
+          .header-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #226d50;
+          }
 
-  .header-nav.show {
-    display: flex;
-  }
+          .header-nav.show {
+            display: flex;
+          }
 
-  .nav-btn {
-    color: white;
-    padding: 12px 20px;
-    text-align: left;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
+          .nav-btn {
+            color: white;
+            padding: 12px 20px;
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+          }
 
-  .nav-btn:hover {
-    background-color: #114a36;
-  }
-}
-
+          .nav-btn:hover {
+            background-color: #114a36;
+          }
+        }
       }
     </style>
   </head>
@@ -283,23 +282,20 @@
         </div>
       </div>
     </header>
-<div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <nav class="header-nav" id="navMenu">
-     <a href="flow.html" class="nav-btn">施工までの流れ</a>
-     <a href="reason.html" class="nav-btn">選ばれる理由</a>
-     <a href="plan.html" class="nav-btn">料金プラン</a>
-     <a href="faq.html" class="nav-btn">よくある質問</a>
+      <a href="flow.html" class="nav-btn">施工までの流れ</a>
+      <a href="reason.html" class="nav-btn">選ばれる理由</a>
+      <a href="plan.html" class="nav-btn">料金プラン</a>
+      <a href="faq.html" class="nav-btn">よくある質問</a>
     </nav>
-
-
     <div class="main-visual">
       <img src="./images/top/main-visual.png" alt="メインビジュアル" />
     </div>
-    
     <section class="section">
       <h2>対応サービス</h2>
       <div class="service-list">
@@ -321,7 +317,6 @@
         </a>
       </div>
     </section>
-
     <section class="section">
       <h2>当社の強み</h2>
       <div class="box-list">
@@ -331,14 +326,12 @@
       </div>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn">無料相談はこちら</a>
     </section>
-
     <footer>&copy; 2025 害獣ないない.com All Rights Reserved.</footer>
-
     <script>
-  function toggleMenu() {
-    const nav = document.getElementById('navMenu');
-    nav.classList.toggle('show');
-  }
-</script>
+      function toggleMenu() {
+        const nav = document.getElementById('navMenu');
+        nav.classList.toggle('show');
+      }
+    </script>
   </body>
 </html>

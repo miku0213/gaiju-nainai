@@ -70,7 +70,7 @@
       }
 
       .main-visual {
-        margin-top: 70px;
+        margin-top: 120px;
         display: flex;
         justify-content: center;
         background-color: #fff;
@@ -209,12 +209,44 @@
   font-size: 16px;
   color: #222;
 }
+        .header-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #226d50;
+  padding: 12px 0;
+  position: fixed;
+  top: 70px; /* 上段ヘッダーの高さと同じ */
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  margin: 0 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  background-color: white;
+  color: #226d50;
+  border: 1px solid #226d50;
+}
+
 
 
       }
     </style>
   </head>
-
+　<nav class="header-nav">
+      <a href="flow.html" class="nav-btn">施工までの流れ</a>
+      <a href="reason.html" class="nav-btn">選ばれる理由</a>
+      <a href="plan.html" class="nav-btn">料金プラン</a>
+      <a href="faq.html" class="nav-btn">よくある質問</a>
+  </nav>
   <body>
     <header>
       <div class="container">

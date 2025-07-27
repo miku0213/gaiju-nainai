@@ -219,6 +219,16 @@
   width: 100%;
   z-index: 999;
 }
+        @media (max-width: 600px) {
+  .header-nav {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    margin: 6px 0;
+  }
+}
+
 
 .nav-btn {
   color: white;
@@ -241,12 +251,6 @@
       }
     </style>
   </head>
-　<nav class="header-nav">
-      <a href="flow.html" class="nav-btn">施工までの流れ</a>
-      <a href="reason.html" class="nav-btn">選ばれる理由</a>
-      <a href="plan.html" class="nav-btn">料金プラン</a>
-      <a href="faq.html" class="nav-btn">よくある質問</a>
-  </nav>
   <body>
     <header>
       <div class="container">
@@ -260,7 +264,12 @@
         </div>
       </div>
     </header>
-
+<nav class="header-nav">
+  <a href="flow.html" class="nav-btn">施工までの流れ</a>
+  <a href="reason.html" class="nav-btn">選ばれる理由</a>
+  <a href="plan.html" class="nav-btn">料金プラン</a>
+  <a href="faq.html" class="nav-btn">よくある質問</a>
+</nav>
     <div class="main-visual">
       <img src="./images/top/main-visual.png" alt="メインビジュアル" />
     </div>

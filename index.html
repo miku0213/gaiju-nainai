@@ -73,6 +73,15 @@
       function toggleMenu() {
         const nav = document.getElementById('navMenu');
         nav.classList.toggle('show');
+        // 外をクリックしたときに閉じるイベントを追加
+        document.addEventListener('click', function handleOutsideClick(e) {
+          const menu = document.getElementById('navMenu');
+          const menuIcon = document.querySelector('.menu-icon');
+          if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+            menu.classList.remove('show');
+            document.removeEventListener('click', handleOutsideClick);
+          }
+        });
       }
     </script>
   </body>

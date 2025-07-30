@@ -261,4 +261,33 @@ footer {
   .nav-btn:hover {
     background-color: #114a36;
   }
+.header-icons {
+  display: none;
+}
+
+.header-icons img {
+  width: 28px;
+  height: 28px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-icons a,
+  .header-icons img {
+    display: block;
+  }
 }

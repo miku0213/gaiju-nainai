@@ -66,9 +66,9 @@ header {
 }
 
 .header-icons img {
-  width: 35px;
-  height: 35px;
-  margin-left: 10px;
+  width: 45px;
+  height: 45px;
+  margin-left: 0px;
   cursor: pointer;
 }
 

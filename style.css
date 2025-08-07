@@ -203,6 +203,43 @@ footer {
     flex: 1 1 100%;
   }
 
+#flow {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.flow-title img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto 40px;
+}
+
+.flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.step .icon img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .flow-list {
+    gap: 20px;
+  }
+
+  .step .icon img {
+    max-width: 100%;
+  }
+}
+
+
   .header-right {
     display: none;
   }

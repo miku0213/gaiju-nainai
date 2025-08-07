@@ -204,11 +204,22 @@ footer {
   }
 
 #flow {
-  padding: 40px 20px;
-  background: #fff;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+#flow h2 {
   text-align: center;
+  margin-bottom: 30px;
 }
 
+#flow h2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 画像中央揃え */
+}
+  
 .flow-title img {
   width: 100%;
   max-width: 700px;
@@ -238,7 +249,6 @@ footer {
     max-width: 100%;
   }
 }
-
 
   .header-right {
     display: none;

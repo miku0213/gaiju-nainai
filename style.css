@@ -73,7 +73,7 @@ header {
 }
 .zone {
   width: 100%;
-  padding: 40px 0;            /* 背景を見せる上下余白 */
+  padding: 0 0 40px;            /* 背景を見せる上下余白 */
 }
 .zone-base {
   background-image: url('./images/bg/base.png');
@@ -88,7 +88,7 @@ header {
   background-size: 100% auto;
 }
 .main-visual {
-  margin-top: 70px !important;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   background: transparent !;

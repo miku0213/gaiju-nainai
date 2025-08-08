@@ -76,6 +76,7 @@ header {
   padding: 40px 0;            /* 背景を見せる上下余白 */
 }
 .zone-base {
+  background: red !important;
   background-image: url('./images/bg/base.png');
   background-position: center top;
   background-repeat: repeat-y;

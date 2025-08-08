@@ -71,7 +71,22 @@ header {
   margin-left: 0px;
   cursor: pointer;
 }
-
+.zone {
+  width: 100%;
+  padding: 40px 0;            /* 背景を見せる上下余白 */
+}
+.zone-base {
+  background-image: url('./images/bg/base.png');
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;  /* 横幅にフィット */
+}
+.zone-wood {
+  background-image: url('./images/bg/wood.png');
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
 .main-visual {
   margin-top: 120px;
   display: flex;
@@ -204,7 +219,7 @@ footer {
 }
 #flow h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 #flow h2 img,
 .flow-title img {
@@ -217,7 +232,7 @@ footer {
 .flow-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 .step {
   display: flex;
@@ -227,6 +242,7 @@ footer {
   max-width: 100%;
   height: auto;
   display: block;
+  margin:0;
 }
 
 @media (max-width: 600px) {

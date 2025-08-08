@@ -91,7 +91,7 @@ header {
   margin-top: 120px;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .main-visual img {

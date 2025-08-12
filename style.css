@@ -53,9 +53,15 @@ header {
 }
 
 .header-right a {
-  background:#226d50;
-  color:#fff;
-  border:1px solid #226d50;
+  display: inline-block;
+  padding: 10px 18px;
+  line-height: 1;
+  text-decoration: none;                 /* 下線なし */
+  border-radius: 9999px;                 /* しっかり丸い（ピル型）。控えめなら 8px などに */
+  border: 1px solid #226d50;             /* 先に枠を付けておくとホバーで高さがズレない */
+  background: #226d50;
+  color: #fff;
+  transition: background .2s, color .2s, border-color .2s, box-shadow .2s;
 }
 .header-right a:hover{
   background:#fff;
@@ -70,6 +76,17 @@ header {
   height: 55px;
   margin-left: 0px;
   cursor: pointer;
+}
+.header-right a:link,
+.header-right a:visited,
+.header-right a:hover,
+.header-right a:active,
+.header-right a:focus{
+  text-decoration: none;
+}
+.header-right a:focus-visible{
+  outline: 2px dashed #226d50;
+  outline-offset: 2px;
 }
 .zone {
   width: 100%;

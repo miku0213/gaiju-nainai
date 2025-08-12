@@ -1,3 +1,8 @@
+:root {
+  --header-height: 70px; /* ヘッダーの高さ */
+  --nav-height: 56px;    /* ナビの高さ（DevToolsで確認して調整） */
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -88,10 +93,10 @@ header {
   background-size: 100% auto;
 }
 .main-visual {
-  margin-top: 126px;
+ margin-top: calc(var(--header-height) + var(--nav-height));
   display: flex;
   justify-content: center;
-  background: transparent !;
+  background-color: transparent;
 }
 
 .main-visual img {

@@ -42,17 +42,6 @@ header {
 }
 .container { max-width:1100px; height: var(--header-height); display:flex; justify-content:space-between; align-items:center; padding:0 10px; box-sizing:border-box; margin:0 auto; }
 
-/* ▼ ここから “エリアごと背景” */
-.area { width:100%; padding:0; }  /* ←上下の余白はエリアでは持たない */
-
-.area-base {
-  background: url('./images/bg/base.png') center top / 100% auto repeat-y;
-}
-
-.area-wood {
-  background: url('./images/bg/wood.png') center top / 100% auto repeat-y;
-}
-
 /* メインビジュアル（ヘッダー＋ナビ分だけ下げる） */
 .main-visual {
   margin-top: calc(var(--header-height) + var(--nav-height));

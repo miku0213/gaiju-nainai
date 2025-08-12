@@ -32,8 +32,8 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,.1);
   z-index: 1000;
 }
-.header-icons {            /* PCではハンバーガー非表示 */
-  display: none;
+.header-icons { 
+  display: none !important; 
 }
 .header-icons img {
   width: 55px;
@@ -91,11 +91,19 @@ footer { background:#226d50; color:#fff; text-align:center; padding:20px 0; marg
   .header-nav.show { display: flex; }
 
   .nav-btn {
-    color: #fff;
-    padding: 12px 20px;
-    text-align: left;
-    border-top: 1px solid rgba(255,255,255,0.1);
+   color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  margin: 0 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: bold;
   }
+.nav-btn:hover {
+  background-color: #fff;
+  color: #226d50;
+  border: 1px solid #226d50;
+}
 
   /* 既存 */
   .flow-list { gap: 16px; }

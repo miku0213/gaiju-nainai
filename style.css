@@ -32,7 +32,14 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,.1);
   z-index: 1000;
 }
-
+.header-icons {            /* PCではハンバーガー非表示 */
+  display: none;
+}
+.header-icons img {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
 .container { max-width:1100px; height: var(--header-height); display:flex; justify-content:space-between; align-items:center; padding:0 10px; box-sizing:border-box; margin:0 auto; }
 
 /* ▼ ここから “エリアごと背景” */
@@ -76,9 +83,32 @@ footer { background:#226d50; color:#fff; text-align:center; padding:20px 0; marg
 .step { display:flex; justify-content:center; line-height:0; }
 .step .icon img { max-width:100%; height:auto; display:block; margin:0; }
 
-/* --- レスポンシブ最小限 --- */
-@media (max-width:600px){
-  .flow-list { gap:16px; }
-  .header-right { display:none; }
-  /* 既存のモバイルナビはそのまま */
+@media (max-width: 600px) {
+  /* スマホ時：右側のTEL/お問い合わせは非表示、ハンバーガーを表示 */
+  .header-right { display: none; }
+  .header-icons { display: flex; align-items: center; gap: 8px; }
+
+  /* スマホナビはデフォ非表示。menuアイコン押下で .show が付く想定 */
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: #226d50;
+    z-index: 999;
+  }
+  .header-nav.show { display: flex; }
+
+  .nav-btn {
+    color: #fff;
+    padding: 12px 20px;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* 既存 */
+  .flow-list { gap: 16px; }
 }
+

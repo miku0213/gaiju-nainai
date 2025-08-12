@@ -234,7 +234,7 @@ footer {
 .flow-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0 !important;
 }
 .step {
   display: flex;
@@ -250,11 +250,14 @@ footer {
 
 @media (max-width: 600px) {
   .flow-list {
-    gap: 12px;
+    gap: 0 !important;
   }
 
-  .step .icon img {
-    max-width: 100%;
+ .step { margin: 0; padding: 0; line-height: 0;
+  }
+ .step .icon { display: block; 
+  }
+ .step .icon img { display: block; margin: 0; vertical-align: top;
   }
 
 

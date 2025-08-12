@@ -3,6 +3,20 @@
   --nav-height: 56px;    /* ナビの高さ */
 }
 
+/* zone 一式 */
+.zone {
+  width: 100%;
+  padding: 0;
+}  /* ★このカッコを追加 */
+
+.zone-base {
+  background: url('./images/bg/base.png') center top / 100% auto repeat-y;
+}
+.zone-wood {
+  background: url('./images/bg/wood.png') center top / 100% auto repeat-y;
+}
+
+
 /* 基本 */
 body {
   margin: 0;

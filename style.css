@@ -78,7 +78,8 @@ header {
 }
 .zone {
   width: 100%;
-  padding: 0;           
+  padding: 0;
+}
 .zone-base {
   background-image: url('./images/bg/base.png');
   background-position: center top;

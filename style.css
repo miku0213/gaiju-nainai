@@ -53,14 +53,14 @@ header {
 }
 
 .header-right a {
-  background-color: #226d50;
-  color: white;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-size: 14px;
+  background:#226d50;
+  color:#fff;
+  border:1px solid #226d50;
 }
-
+.header-right a:hover{
+  background:#fff;
+  color:#226d50;
+}
 .header-icons {
   display: none; /* PCでは非表示 */
 }
@@ -83,6 +83,8 @@ header {
 }
 .zone-wood {
   background-image: url('./images/bg/wood.png');
+  padding-top:20px;
+  padding-bottom:30px; 
   background-position: center top;
   background-repeat: repeat-y;
   background-size: 100% auto;
@@ -91,7 +93,7 @@ header {
   margin-top: 120px;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .main-visual img {
@@ -214,17 +216,17 @@ footer {
 
 #flow {
   max-width: 700px;
-  margin: 60px auto;
+  margin:20px auto;
   padding: 0 20px;
 }
 #flow h2 {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 #flow h2 img,
 .flow-title img {
   display: block;
-  margin: 0 auto 30px;
+  margin: 0 auto 12px;
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -232,10 +234,11 @@ footer {
 .flow-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .step {
   display: flex;
+  line-height:0;
   justify-content: center;
 }
 .step .icon img {
@@ -247,7 +250,7 @@ footer {
 
 @media (max-width: 600px) {
   .flow-list {
-    gap: 20px;
+    gap: 12px;
   }
 
   .step .icon img {

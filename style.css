@@ -45,7 +45,7 @@ header {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   white-space: nowrap;
 }
 
@@ -57,19 +57,16 @@ header {
 .header-right .tel-inline{
   display:flex;
   align-items:center;
-  gap:8px;
   text-decoration:none;
-  color:#226d50;
-  font-weight:800;
-  line-height:1;
 }
-.header-right .tel-inline:hover{ opacity:.85; }
+.header-right .tel-inline:hover { opacity:.9; }
+
 
 .header-right .tel-icon{
-  width:18px;
-  height:18px;
+  height: 36px;            /* 32〜40pxあたりで調整してね */
+  width: auto;             /* アスペクト比維持 */
   display:block;
-  object-fit:contain;
+  object-fit: contain;
 }
 
 /* ▼ お問い合わせボタン（PC用） */

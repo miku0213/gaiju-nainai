@@ -59,16 +59,16 @@ header {
   align-items:center;
   text-decoration:none;
 }
-.header-right .tel-inline:hover { opacity:.9; }
-
-
+.header-right .tel-inline .tel-number{ display:none !important; }
 .header-right .tel-icon{
-  height: 36px;            /* 32〜40pxあたりで調整してね */
-  width: auto;             /* アスペクト比維持 */
-  display:block;
+ height: 44px;
+  width: auto;
+  display: block;
   object-fit: contain;
 }
-
+.header-right a[href^="tel"]:not(.tel-inline){
+  display:none !important;
+}
 /* ▼ お問い合わせボタン（PC用） */
 .btn-contact{
   display: inline-block;

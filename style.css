@@ -277,7 +277,6 @@ footer {
  .step .icon img { display: block; margin: 0; vertical-align: top;
   }
 
-
   .header-right {
     display: none;
   }
@@ -320,4 +319,44 @@ footer {
   .nav-btn:hover {
     background-color: #114a36;
   }
+  .header-right .tel-inline{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:#226d50;
+  font-weight:800;
+  line-height:1;
+}
+.header-right .tel-inline:hover{ opacity:.85; }
+
+.header-right .tel-icon{
+  width:18px;
+  height:18px;
+  display:block;
+  object-fit:contain;
+}
+
+/* PC用：お問い合わせボタン（これまでの .header-right a をこちらへ移管） */
+.btn-contact{
+  display:inline-block;
+  padding:10px 18px;
+  line-height:1;
+  text-decoration:none;
+  border-radius:9999px;
+  border:1px solid #226d50;
+  background:#226d50;
+  color:#fff;
+  transition:background .2s, color .2s, border-color .2s, box-shadow .2s;
+}
+.btn-contact:hover{ background:#fff; color:#226d50; }
+
+/* 表示切替：PC=header-right表示／スマホ=header-icons表示 */
+.header-icons{ display:none; }  /* PCではスマホ用アイコンを隠す */
+
+@media (max-width:600px){
+  .header-right{ display:none; }        /* スマホではPC用を隠す */
+  .header-icons{ display:flex; gap:8px; }  /* スマホは今の丸アイコンをそのまま表示 */
+  .header-icons img{ width:28px; height:28px; } /* お好みでサイズ調整 */
+}
 }

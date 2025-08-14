@@ -61,7 +61,7 @@ header {
 }
 .header-right .tel-inline .tel-number{ display:none !important; }
 .header-right .tel-icon{
- height: 44px;
+  height: 52px;
   width: auto;
   display: block;
   object-fit: contain;

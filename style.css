@@ -312,63 +312,55 @@ footer {
   }
   .nav-btn:hover { background-color: #114a36;
   }
-/* ========== フル幅CTA帯（当社の強みの直下） ========== */
-
-/* 画面端まで“はみ出す”テクニック（full-bleed） */
-.cta-fullbleed{
+/* ===== CTA帯（サイト幅の中で表示） ===== */
+.cta-wrap{
   position: relative;
-  width: 100vw;      /* 画面幅いっぱい */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-
-  /* 帯の前後の余白はお好みで */
-  margin-top: 16px;
-  margin-bottom: 24px;
+  max-width: 1100px;     /* あなたの .container と揃える */
+  margin: 16px auto 24px;
 }
 
-.cta-fullbleed .cta-band{
+.cta-wrap .cta-band{
   display: block;
   width: 100%;
   height: auto;
-  max-width: none;   /* 親の max-width 制限に引っ張られないように */
 }
 
-/* 画像の上に重ねる透明リンク（クリック領域） */
-.cta-fullbleed .cta-hot{
-  position: absolute; 
+/* 画像の上に透明リンクを重ねる */
+.cta-wrap .hit{
+  position: absolute;
   top: 0;
-  height: 100%;
+  bottom: 0;            /* ←高さ100%にする */
   display: block;
-  text-indent: -9999px; 
+  text-indent: -9999px; /* テキストは画面外へ */
   overflow: hidden;
+  /* クリックの見た目は消す */
+  background: transparent;
+  border: none;
 }
 
-/* ▼ クリック範囲（% は画像の見た目に合わせて微調整してください） */
-
-/* 電話ボタン：帯の右側の緑ピル部分に合わせる */
-.cta-fullbleed .cta-hot-call{
-  right: 7%;         /* 右余白 */
-  width: 38%;        /* 右側の約4割をクリック可 */
+/* ▼クリック範囲（%は画像の見た目に合わせて微調整） */
+.cta-wrap .hit-call{            /* 電話（右側の丸い緑ピル） */
+  right: 6%;
+  width: 38%;
 }
 
-/* フォーム：帯中央～左側の緑バッジ部分に合わせる */
-.cta-fullbleed .cta-hot-form{
-  left: 15%;
-  width: 35%;
+.cta-wrap .hit-form{            /* フォーム（左側の緑バッジ） */
+  left: 14%;
+  width: 40%;
 }
 
-/* PC では電話クリックを無効に（スマホのみ有効） */
+/* PCでは電話クリックを無効化（スマホのみ有効） */
 @media (min-width: 601px){
-  .cta-fullbleed .cta-hot-call{ pointer-events: none; }
+  .cta-wrap .hit-call{ pointer-events: none; }
 }
 
-/* スマホ時：少しだけ位置を詰める（必要に応じて微調整） */
+/* スマホはヒットエリアを少し広げる */
 @media (max-width: 600px){
-  .cta-fullbleed .cta-hot-call{ right: 6%; width: 45%; }
-  .cta-fullbleed .cta-hot-form{ left: 12%; width: 40%; }
+  .cta-wrap{ margin: 12px auto 20px; }
+  .cta-wrap .hit-call{ right: 4%; width: 45%; }
+  .cta-wrap .hit-form{ left: 10%; width: 44%; }
 }
+
 
 
 }

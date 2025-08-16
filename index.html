@@ -16,7 +16,6 @@
           <img src="./images/icons/icon-favi.png" alt="ロゴ" />
           <span>害獣ないない.com</span>
         </div>
-
         <!-- 右：スマホ用の丸アイコン（PCではCSSで非表示） -->
         <div class="header-icons">
           <a href="tel:09070343645" aria-label="電話をかける">
@@ -27,20 +26,16 @@
           </a>
           <img src="./images/icons/icon-menu.png" alt="メニュー" class="menu-icon" onclick="toggleMenu()" />
         </div>
-
-       <div class="header-right">
-        <!-- 画像だけで電話（番号入り画像） -->
-        <a href="tel:09070343645" class="tel-inline" aria-label="電話をかける（090-7034-3645）">
-         <img src="./images/icons/icon-telnom.png" alt="電話" class="tel-icon">
-        </a>
-
-       <!-- お問い合わせボタン -->
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform"
-        target="_blank" class="btn-contact">お問い合わせ</a>
-       </div>
+        <div class="header-right">
+          <!-- 画像だけで電話（番号入り画像） -->
+          <a href="tel:09070343645" class="tel-inline" aria-label="電話をかける（090-7034-3645）">
+            <img src="./images/icons/icon-telnom.png" alt="電話" class="tel-icon">
+          </a>
+          <!-- お問い合わせボタン -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn-contact">お問い合わせ</a>
+        </div>
       </div>
     </header>
-
     <!-- 固定ナビ -->
     <nav class="header-nav" id="navMenu">
       <a href="flow.html" class="nav-btn">サービスの流れ</a>
@@ -48,13 +43,19 @@
       <a href="plan.html" class="nav-btn">料金プラン</a>
       <a href="faq.html" class="nav-btn">よくある質問</a>
     </nav>
-
+    <!-- CTA画像（電話＋フォームの2ゾーン。画像は1枚） -->
+    <div class="cta-image">
+      <img src="./images/icons/icon-contact.png" alt="お電話・お問い合わせ" />
+      <!-- スマホだけ：電話ゾーンを有効化 -->
+      <a class="cta-phone sp-only" href="tel:09070343645" aria-label="電話をかける（090-7034-3645）"></a>
+      <!-- PC/スマホ共通：フォームゾーン -->
+      <a class="cta-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" aria-label="お問い合わせフォーム"></a>
+    </div>
     <!-- base 背景ゾーン -->
     <div class="zone zone-base">
       <div class="main-visual">
         <img src="./images/top/main-visual.png" alt="メインビジュアル" />
       </div>
-
       <section class="section">
         <h2>対応サービス</h2>
         <div class="service-list">
@@ -76,7 +77,6 @@
           </a>
         </div>
       </section>
-
       <section class="section">
         <h2>当社の強み</h2>
         <div class="box-list">
@@ -84,22 +84,15 @@
           <div class="box">✓ 地域密着・即日対応OK</div>
           <div class="box">✓ 再発防止までしっかりサポート</div>
         </div>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform"
-          target="_blank"
-          class="btn"
-          >無料相談はこちら</a
-        >
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn">無料相談はこちら</a>
       </section>
     </div>
-
     <!-- wood 背景ゾーン（サービスの流れ） -->
     <div class="zone zone-wood">
       <section id="flow">
         <h2 class="flow-title">
           <img src="./images/steps/title.png" loading="lazy" alt="サービスの流れ" />
         </h2>
-
         <div class="flow-list">
           <div class="step">
             <div class="icon">
@@ -134,14 +127,11 @@
         </div>
       </section>
     </div>
-
     <footer>&copy; 2025 害獣ないない.com All Rights Reserved.</footer>
-
     <script>
       function toggleMenu() {
         const nav = document.getElementById('navMenu');
         nav.classList.toggle('show');
-
         // 外をクリックしたときに閉じる
         document.addEventListener('click', function handleOutsideClick(e) {
           const menu = document.getElementById('navMenu');
@@ -155,4 +145,3 @@
     </script>
   </body>
 </html>
-

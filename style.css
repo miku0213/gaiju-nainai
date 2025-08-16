@@ -312,55 +312,63 @@ footer {
   }
   .nav-btn:hover { background-color: #114a36;
   }
-/* ---- CTA 画像（icon-contact.png）のクリックゾーン設定 ---- */
-.cta-image{
+/* ========== フル幅CTA帯（当社の強みの直下） ========== */
+
+/* 画面端まで“はみ出す”テクニック（full-bleed） */
+.cta-fullbleed{
   position: relative;
-  max-width: 700px;          /* 画像幅に合わせて */
-  margin: 16px auto 0;
-  padding: 0 20px;           /* サイトの左右余白に合わせて */
+  width: 100vw;      /* 画面幅いっぱい */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  /* 帯の前後の余白はお好みで */
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
-.cta-image img{
+
+.cta-fullbleed .cta-band{
+  display: block;
   width: 100%;
   height: auto;
+  max-width: none;   /* 親の max-width 制限に引っ張られないように */
+}
+
+/* 画像の上に重ねる透明リンク（クリック領域） */
+.cta-fullbleed .cta-hot{
+  position: absolute; 
+  top: 0;
+  height: 100%;
   display: block;
+  text-indent: -9999px; 
+  overflow: hidden;
 }
 
-/* 透明リンクの基本 */
-.cta-image a{
-  position: absolute;
-  display: block;
-  /* デバッグ時は下の1行を有効化して輪郭を見る
-  outline: 2px dashed rgba(255,0,0,.5);
-  */
+/* ▼ クリック範囲（% は画像の見た目に合わせて微調整してください） */
+
+/* 電話ボタン：帯の右側の緑ピル部分に合わせる */
+.cta-fullbleed .cta-hot-call{
+  right: 7%;         /* 右余白 */
+  width: 38%;        /* 右側の約4割をクリック可 */
 }
 
-/* ▼ クリック範囲（例）
-   画像の「電話ボタン帯」にかぶせる：左3% 右3%、縦は上から62%〜78% くらいのイメージ
-   画像の「フォームボタン帯」にかぶせる：左3% 右3%、縦は上から80%〜94% くらいのイメージ
-   ※ % は画面幅に追従するので、PC/スマホでもおおむね重なります。
-*/
-.cta-phone{
-  left: 3%;
-  right: 3%;
-  top: 62%;
-  bottom: 22%;   /* = 100% - (62%〜78%) の下端。好みで調整 */
+/* フォーム：帯中央～左側の緑バッジ部分に合わせる */
+.cta-fullbleed .cta-hot-form{
+  left: 15%;
+  width: 35%;
 }
 
-.cta-form-link{
-  left: 3%;
-  right: 3%;
-  top: 80%;
-  bottom: 6%;
+/* PC では電話クリックを無効に（スマホのみ有効） */
+@media (min-width: 601px){
+  .cta-fullbleed .cta-hot-call{ pointer-events: none; }
 }
 
-/* PC/SP 切替（既存と合わせる） */
-.pc-only { display: block; }
-.sp-only { display: none; }
-
+/* スマホ時：少しだけ位置を詰める（必要に応じて微調整） */
 @media (max-width: 600px){
-  .pc-only { display: none; }
-  .sp-only { display: inline-block; }
+  .cta-fullbleed .cta-hot-call{ right: 6%; width: 45%; }
+  .cta-fullbleed .cta-hot-form{ left: 12%; width: 40%; }
 }
 
-  
+
 }

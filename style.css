@@ -310,5 +310,57 @@ footer {
     text-align: left;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .nav-btn:hover { background-color: #114a36; }
+  .nav-btn:hover { background-color: #114a36;
+  }
+/* ---- CTA 画像（icon-contact.png）のクリックゾーン設定 ---- */
+.cta-image{
+  position: relative;
+  max-width: 700px;          /* 画像幅に合わせて */
+  margin: 16px auto 0;
+  padding: 0 20px;           /* サイトの左右余白に合わせて */
+}
+.cta-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 透明リンクの基本 */
+.cta-image a{
+  position: absolute;
+  display: block;
+  /* デバッグ時は下の1行を有効化して輪郭を見る
+  outline: 2px dashed rgba(255,0,0,.5);
+  */
+}
+
+/* ▼ クリック範囲（例）
+   画像の「電話ボタン帯」にかぶせる：左3% 右3%、縦は上から62%〜78% くらいのイメージ
+   画像の「フォームボタン帯」にかぶせる：左3% 右3%、縦は上から80%〜94% くらいのイメージ
+   ※ % は画面幅に追従するので、PC/スマホでもおおむね重なります。
+*/
+.cta-phone{
+  left: 3%;
+  right: 3%;
+  top: 62%;
+  bottom: 22%;   /* = 100% - (62%〜78%) の下端。好みで調整 */
+}
+
+.cta-form-link{
+  left: 3%;
+  right: 3%;
+  top: 80%;
+  bottom: 6%;
+}
+
+/* PC/SP 切替（既存と合わせる） */
+.pc-only { display: block; }
+.sp-only { display: none; }
+
+@media (max-width: 600px){
+  .pc-only { display: none; }
+  .sp-only { display: inline-block; }
+}
+
+  
 }

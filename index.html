@@ -43,14 +43,6 @@
       <a href="plan.html" class="nav-btn">料金プラン</a>
       <a href="faq.html" class="nav-btn">よくある質問</a>
     </nav>
-    <!-- CTA画像（電話＋フォームの2ゾーン。画像は1枚） -->
-    <div class="cta-image">
-      <img src="./images/icons/icon-contact.png" alt="お電話・お問い合わせ" />
-      <!-- スマホだけ：電話ゾーンを有効化 -->
-      <a class="cta-phone sp-only" href="tel:09070343645" aria-label="電話をかける（090-7034-3645）"></a>
-      <!-- PC/スマホ共通：フォームゾーン -->
-      <a class="cta-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" aria-label="お問い合わせフォーム"></a>
-    </div>
     <!-- base 背景ゾーン -->
     <div class="zone zone-base">
       <div class="main-visual">
@@ -87,6 +79,19 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform" target="_blank" class="btn">無料相談はこちら</a>
       </section>
     </div>
+<!-- ★当社の強み セクションの直後／zone-wood の手前に追加 -->
+<div class="cta-fullbleed">
+  <img src="./images/icons/icon-contact.png"
+       alt="現地調査無料・お気軽にお電話ください／お問い合わせフォームはこちら"
+       class="cta-band">
+
+  <!-- クリック範囲：スマホ=電話+フォーム／PC=フォームのみ -->
+  <a href="tel:09070343645" class="cta-hot cta-hot-call" aria-label="電話をかける">電話</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gALRTJmPkdEEfdliW0t47S1zFdvjV9et6vgOWntGFKkSDw/viewform"
+     target="_blank" class="cta-hot cta-hot-form" aria-label="お問い合わせフォーム">フォーム</a>
+</div>
+
+    
     <!-- wood 背景ゾーン（サービスの流れ） -->
     <div class="zone zone-wood">
       <section id="flow">
@@ -145,3 +150,4 @@
     </script>
   </body>
 </html>
+

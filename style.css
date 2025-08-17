@@ -329,19 +329,6 @@ footer {
   text-indent: -9999px; overflow: hidden;
 }
 
-
-/* 電話ボタンのタップ範囲（帯の電話ピルの上） */
-.cta-tel{
-  position: absolute;
-  left: 55%;
-  top: 74%;
-  width: 40%;
-  height: 14%;
-  display: block;
-  text-indent: -9999px;   /* テキストは画面外へ */
-  overflow: hidden;
-}
-
 /* ---------- スマホ ---------- */
 @media (max-width: 600px) {
   /* STEP画像の間隔はゼロのまま */
@@ -378,32 +365,7 @@ footer {
 }
 @media (min-width: 601px){
   .cta-tel{ display: none; }
-}
 
-/* スマホ調整 */
-@media (max-width: 600px){
-  .zone-orange{ padding: 20px 0; }
-  .cta-band{
-    width: 94vw;               /* 画像の左右が触れないよう少し余白を増やす */
-    aspect-ratio: 1125 / 520;  /* スマホ表示用に比率を近づけると見た目が安定 */
-  }
-  .cta-mail{
-    left: 50%; top: 60%;
-    width: 62%; height: 15%;
-    transform: translateX(-50%);
-    font-size: 14px;
-  }
-  .cta-tel{
-    left: 50%; top: 77%;
-    width: 64%; height: 14%;
-    transform: translateX(-50%);
-  }
-}
-
-/* --- 表示の切替 --- */
-/* PC では電話リンクを隠し、フォームのみ表示 */
-@media (min-width: 601px){
-  .cta-tel{ display: none; }
 }
 
 /* SP では両方タップできるように表示。位置を微調整してもOK */

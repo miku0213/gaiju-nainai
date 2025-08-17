@@ -278,42 +278,6 @@ footer {
   display: block;
   margin:0;
 }
-
-/* ---------- スマホ ---------- */
-@media (max-width: 600px) {
-  /* STEP画像の間隔はゼロのまま */
-  .flow-list { gap: 0 !important; }
-  .step { margin: 0; padding: 0; line-height: 0; }
-  .step .icon { display: block; }
-  .step .icon img { display: block; margin: 0; vertical-align: top; }
-
-  /* 表示切替：スマホはPC用右側を隠し、丸アイコンを出す */
-  .header-right { display: none; }
-  .header-icons { display: flex; align-items: center; gap: 8px; }
-  .header-icons img { width: 28px; height: 28px; }
-
-  /* ドロワーメニュー用（既存） */
-  .header-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #226d50;
-  }
-  .header-nav.show { display: flex; }
-
-  .nav-btn {
-    color: white;
-    padding: 12px 20px;
-    text-align: left;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .nav-btn:hover { background-color: #114a36;
-  }
-}
-
 /* ===== CTA帯（サイト幅の中で表示） ===== */
 .cta-wrap{
   position: relative;
@@ -393,6 +357,42 @@ footer {
   text-indent: -9999px;  /* テキストは不要なので隠す */
   overflow: hidden;
 }
+
+/* ---------- スマホ ---------- */
+@media (max-width: 600px) {
+  /* STEP画像の間隔はゼロのまま */
+  .flow-list { gap: 0 !important; }
+  .step { margin: 0; padding: 0; line-height: 0; }
+  .step .icon { display: block; }
+  .step .icon img { display: block; margin: 0; vertical-align: top; }
+
+  /* 表示切替：スマホはPC用右側を隠し、丸アイコンを出す */
+  .header-right { display: none; }
+  .header-icons { display: flex; align-items: center; gap: 8px; }
+  .header-icons img { width: 28px; height: 28px; }
+
+  /* ドロワーメニュー用（既存） */
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #226d50;
+  }
+  .header-nav.show { display: flex; }
+
+  .nav-btn {
+    color: white;
+    padding: 12px 20px;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-btn:hover { background-color: #114a36;
+  }
+}
+
 
 /* --- 表示の切替 --- */
 /* PC では電話リンクを隠し、フォームのみ表示 */

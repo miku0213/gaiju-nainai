@@ -348,6 +348,75 @@ footer {
   left: 14%;
   width: 40%;
 }
+/* 帯の土台（画像を背景に） */
+.cta-band{
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 24px auto 0;
+  /* 画像のアスペクト比に合わせて調整（例）*/
+  aspect-ratio: 1920 / 420; /* 合わなければ数値を微調整 */
+  background: url("./images/top/icon-contact.png") center / cover no-repeat;
+}
+
+/* フォームボタン（PCでも見える実ボタン） */
+.cta-mail{
+  position: absolute;
+  /* 下の4つは位置＆サイズ。％で調整してください */
+  left: 52%;          /* 画像の右エリア中央寄り */
+  top: 58%;           /* 電話ボタンより少し上 */
+  width: 36%;         /* ボタン幅 */
+  height: 12%;        /* ボタン高さ */
+
+  display: grid; place-items: center; /* 中央寄せ */
+  background: #196b4f;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  transition: transform .15s ease, filter .15s ease;
+}
+.cta-mail:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+
+/* 電話リンク（背景の電話ボタンの上に透明リンクをかぶせる） */
+.cta-tel{
+  position: absolute;
+  left: 52%;           /* 電話ボタンの位置に合わせる */
+  top: 74%;
+  width: 44%;
+  height: 14%;
+  display: block;
+  text-indent: -9999px;  /* テキストは不要なので隠す */
+  overflow: hidden;
+}
+
+/* --- 表示の切替 --- */
+/* PC では電話リンクを隠し、フォームのみ表示 */
+@media (min-width: 601px){
+  .cta-tel{ display: none; }
+}
+
+/* SP では両方タップできるように表示。位置を微調整してもOK */
+@media (max-width: 600px){
+  /* 帯の比率が違う場合はここを調整 */
+  .cta-band{ aspect-ratio: 1125 / 520; }
+
+  .cta-mail{
+    left: 50%;
+    top: 60%;
+    width: 42%;
+    height: 13%;
+    font-size: 14px;
+  }
+  .cta-tel{
+    left: 50%;
+    top: 77%;
+    width: 50%;
+    height: 14%;
+  }
+}
 
 /* PCでは電話クリックを無効化（スマホのみ有効） */
 @media (min-width: 601px){

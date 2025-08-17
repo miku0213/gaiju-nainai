@@ -379,35 +379,13 @@ footer {
     width: 42%;
     height: 13%;
     font-size: 14px;
+    transform: translateX(-50%); 
   }
   .cta-tel{
     left: 50%;
     top: 77%;
     width: 50%;
     height: 14%;
+    transform: translateX(-50%); 
   }
-}
-
-/* スマホ時の微調整 */
-@media (max-width: 600px){
-  .cta-band{ aspect-ratio: 1125 / 520; }
-
-  .cta-mail{
-    left: 50%;
-    top: 60%;
-    width: 62%;
-    height: 15%;
-    font-size: 14px;
-    transform: translateX(-50%);         /* スマホは中央寄せの方が楽 */
-  }
-  .cta-tel{
-    left: 50%;
-    top: 77%;
-    width: 64%;
-    height: 14%;
-    transform: translateX(-50%);
-  }
-
-
-
 }

@@ -298,14 +298,22 @@ footer {
   border: none;
 }
 
-/* 帯の土台（比率は必要なら微調整） */
+/* 帯の土台（背景：orange.png、その上に icon-contact.png を重ねる） */
 .cta-band{
   position: relative;
   width: 100%;
   max-width: 1100px;
   margin: 24px auto 0;
-  aspect-ratio: 1920 / 420;
+  aspect-ratio: 1920 / 420;   /* ここは今までのままでOK。必要なら微調整 */
+
+  /* ←複数背景。先に書いた方が上に重なる */
+  background-image: url("./images/icons/icon-contact.png?v=2"),
+                    url("./images/bg/orange.png?v=1");
+  background-position: center center, center center;
+  background-size: cover, cover;            /* 両方とも全面にフィットさせる */
+  background-repeat: no-repeat, no-repeat;  /* タイルしない */
 }
+
 /* 背景として全面に敷く */
 .cta-bg{
   position: absolute;

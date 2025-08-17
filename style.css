@@ -112,11 +112,23 @@ header {
 }
 .zone-wood {
   background-image: url('./images/bg/wood.png');
-  padding-top:20px;
+  padding-top:8px;
   padding-bottom:30px; 
+  display: flow-root;
   background-position: center top;
   background-repeat: repeat-y;
   background-size: 100% auto;
+}
+.zone-wood > *:first-child{ margin-top: 0; }
+.zone-orange{
+  width: 100%;
+  /* 高さを低めに：上下余白を少なく */
+  padding: 12px 0;                      /* ← ここで高さを調整（お好みで 8〜16px 程度） */
+  background-color: #f6a135;            /* 念のためのベース色 */
+  background-image: url("./images/bg/orange.png");
+  background-position: center top;
+  background-repeat: repeat;            /* ← スケーリングせずにタイル敷き（継ぎ目が出ない） */
+  background-size: auto;
 }
 
 /* メインビジュアル */
@@ -278,28 +290,17 @@ footer {
   display: block;
   margin:0;
 }
-/* 画面幅いっぱいのオレンジ背景ゾーン */
-.zone-orange{
-  width: 100%;
-  /* 上下の余白はお好みで調整 */
-  padding: 28px 0;
-  background-image: url("./images/bg/orange.png");
-  background-position: center top;
-  background-repeat: repeat-y;
-  background-size: 100% auto;  /* 横は100%、縦は比率維持でリピート */
-}
 
-/* 中身のカード（icon-contact.png を “切れずに” 載せる） */
+/* 中身のカード（icon-contact.png が切れないように配置） */
 .cta-band{
   position: relative;
-  width: min(1100px, 92vw);     /* PCは1100px、スマホは余白つけて92vw */
+  width: min(1100px, 92vw);
   margin: 0 auto;
-  aspect-ratio: 1920 / 420;     /* 画像の元比率に近い数値に（必要なら微調整） */
-
+  aspect-ratio: 1920 / 420;             /* 画像の元比率に近い数値 */
   background-image: url("./images/icons/icon-contact.png");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;     /* ←ここがポイント：切らずに全部見せる */
+  background-size: contain;             /* 全体が収まるように表示（左右が切れない） */
 }
 
 /* フォームボタン（位置は％で微調整） */
@@ -370,22 +371,20 @@ footer {
 
 /* SP では両方タップできるように表示。位置を微調整してもOK */
 @media (max-width: 600px){
-  /* 帯の比率が違う場合はここを調整 */
-  .cta-band{ aspect-ratio: 1125 / 520; }
-
+  .zone-orange{ padding: 10px 0; }
+  .cta-band{
+    width: 94vw;
+    aspect-ratio: 1125 / 520;
+  }
   .cta-mail{
-    left: 50%;
-    top: 60%;
-    width: 42%;
-    height: 13%;
+    left: 50%; top: 60%;
+    width: 62%; height: 15%;
+    transform: translateX(-50%);
     font-size: 14px;
-    transform: translateX(-50%); 
   }
   .cta-tel{
-    left: 50%;
-    top: 77%;
-    width: 50%;
-    height: 14%;
-    transform: translateX(-50%); 
+    left: 50%; top: 77%;
+    width: 64%; height: 14%;
+    transform: translateX(-50%);
   }
 }

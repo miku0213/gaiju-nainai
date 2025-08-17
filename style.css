@@ -304,10 +304,10 @@ footer {
   width: 100%;
   max-width: 1100px;
   margin: 24px auto 0;
-  aspect-ratio: 1920 / 420;              /* 比率は必要に応じて調整 */
-- background: url("./images/top/icon-contact.png") center / cover no-repeat;
-+ background: url("./images/icons/icon-contact.png") center / cover no-repeat;
+  aspect-ratio: 1920 / 420;              /* 画像の比率に合わせて調整 */
+  background: url("images/icons/icon-contact.png") center / cover no-repeat;
 }
+
 /* フォームボタン（帯の上に絶対配置） */
 .cta-mail{
   position: absolute;

@@ -419,11 +419,6 @@ footer {
   }
 }
 
-/* PC では電話タップ無効（非表示） */
-@media (min-width: 601px){
-  .cta-tel{ display: none; }
-}
-
 /* スマホ時の微調整 */
 @media (max-width: 600px){
   .cta-band{ aspect-ratio: 1125 / 520; }

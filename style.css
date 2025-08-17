@@ -278,73 +278,57 @@ footer {
   display: block;
   margin:0;
 }
-/* ===== CTA帯（サイト幅の中で表示） ===== */
-.cta-wrap .cta-band{
-  display: block;
+/* 画面幅いっぱいのオレンジ背景ゾーン */
+.zone-orange{
   width: 100%;
-  height: auto;
+  /* 上下の余白はお好みで調整 */
+  padding: 28px 0;
+  background-image: url("./images/bg/orange.png");
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;  /* 横は100%、縦は比率維持でリピート */
 }
 
-/* 画像の上に透明リンクを重ねる */
-.cta-wrap .hit{
-  position: absolute;
-  top: 0;
-  bottom: 0;            /* ←高さ100%にする */
-  display: block;
-  text-indent: -9999px; /* テキストは画面外へ */
-  overflow: hidden;
-  /* クリックの見た目は消す */
-  background: transparent;
-  border: none;
-}
-
-/* 帯の土台（背景：orange.png、その上に icon-contact.png を重ねる） */
+/* 中身のカード（icon-contact.png を “切れずに” 載せる） */
 .cta-band{
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 24px auto 0;
-  aspect-ratio: 1920 / 420;   /* ここは今までのままでOK。必要なら微調整 */
+  width: min(1100px, 92vw);     /* PCは1100px、スマホは余白つけて92vw */
+  margin: 0 auto;
+  aspect-ratio: 1920 / 420;     /* 画像の元比率に近い数値に（必要なら微調整） */
 
-  /* ←複数背景。先に書いた方が上に重なる */
-  background-image: url("./images/icons/icon-contact.png?v=2"),
-                    url("./images/bg/orange.png?v=1");
-  background-position: center center, center center;
-  background-size: cover, cover;            /* 両方とも全面にフィットさせる */
-  background-repeat: no-repeat, no-repeat;  /* タイルしない */
+  background-image: url("./images/icons/icon-contact.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;     /* ←ここがポイント：切らずに全部見せる */
 }
 
-/* 背景として全面に敷く */
-.cta-bg{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 0;
-}
-.cta-mail, .cta-tel{ z-index: 1; }
-/* フォームボタン（帯の上に絶対配置） */
+/* フォームボタン（位置は％で微調整） */
 .cta-mail{
   position: absolute;
-  /* ↓この4つで位置を合わせます（％はお好みで微調整） */
   left: 14%;
   top: 60%;
   width: 40%;
   height: 15%;
-
   display: grid; place-items: center;
   background: #196b4f;
-  color: #fff;
-  font-weight: 700;
+  color: #fff; font-weight: 700;
   text-decoration: none;
   border-radius: 9999px;
-  line-height: 1;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
   transition: transform .15s ease, filter .15s ease;
 }
 .cta-mail:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+
+/* 電話タップ範囲（スマホで有効、PCは非表示でもOK） */
+.cta-tel{
+  position: absolute;
+  left: 55%;
+  top: 74%;
+  width: 40%;
+  height: 14%;
+  text-indent: -9999px; overflow: hidden;
+}
+
 
 /* 電話ボタンのタップ範囲（帯の電話ピルの上） */
 .cta-tel{
@@ -392,7 +376,29 @@ footer {
   .nav-btn:hover { background-color: #114a36;
   }
 }
+@media (min-width: 601px){
+  .cta-tel{ display: none; }
+}
 
+/* スマホ調整 */
+@media (max-width: 600px){
+  .zone-orange{ padding: 20px 0; }
+  .cta-band{
+    width: 94vw;               /* 画像の左右が触れないよう少し余白を増やす */
+    aspect-ratio: 1125 / 520;  /* スマホ表示用に比率を近づけると見た目が安定 */
+  }
+  .cta-mail{
+    left: 50%; top: 60%;
+    width: 62%; height: 15%;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
+  .cta-tel{
+    left: 50%; top: 77%;
+    width: 64%; height: 14%;
+    transform: translateX(-50%);
+  }
+}
 
 /* --- 表示の切替 --- */
 /* PC では電話リンクを隠し、フォームのみ表示 */

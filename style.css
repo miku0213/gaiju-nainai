@@ -305,9 +305,9 @@ footer {
 /* フォームボタン（位置は％で微調整） */
 .cta-mail{
   position: absolute;
-  left: 14%;
+  left: 56%;
   top: 60%;
-  width: 40%;
+  width: 25%;
   height: 15%;
   display: grid; place-items: center;
   background: #196b4f;

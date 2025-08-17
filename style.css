@@ -279,12 +279,6 @@ footer {
   margin:0;
 }
 /* ===== CTA帯（サイト幅の中で表示） ===== */
-.cta-wrap{
-  position: relative;
-  max-width: 1100px;     /* あなたの .container と揃える */
-  margin: 16px auto 24px;
-}
-
 .cta-wrap .cta-band{
   display: block;
   width: 100%;
@@ -303,16 +297,6 @@ footer {
   background: transparent;
   border: none;
 }
-
-/* ▼クリック範囲（%は画像の見た目に合わせて微調整） */
-.cta-wrap .hit-call{            /* 電話（右側の丸い緑ピル） */
-  right: 6%;
-  width: 38%;
-}
-
-.cta-wrap .hit-form{            /* フォーム（左側の緑バッジ） */
-  left: 14%;
-  width: 40%;
 }
 /* 帯の土台（画像を背景に） */
 .cta-band{

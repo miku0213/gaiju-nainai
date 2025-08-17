@@ -312,6 +312,8 @@ footer {
   }
   .nav-btn:hover { background-color: #114a36;
   }
+}
+
 /* ===== CTA帯（サイト幅の中で表示） ===== */
 .cta-wrap{
   position: relative;

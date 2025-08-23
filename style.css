@@ -371,29 +371,34 @@ footer {
 
 /* SP では両方タップできるように表示。位置を微調整してもOK */
 @media (max-width: 600px){
-  /* オレンジ帯の高さと画像比率（切れ防止） */
-  .zone-orange{ padding: 10px 0 18px; }
+  /* オレンジ帯の高さとSP画像を適用 */
+  .zone-orange{ padding: 10px 0; }
+
   .cta-band{
     width: 94vw;
-    aspect-ratio: 1125 / 520;
-    background-size: contain;
+    aspect-ratio: 1125 / 520; /* SP画像の比率に合わせる */
+    background-image: url("./images/icons/icon-contact-sp.png"); /* ←SP用画像 */
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
   }
 
   /* 画像の上に重ねるPC用ボタンはSPでは隠す */
   .cta-mail, .cta-tel{ display: none !important; }
 
-  /* 画像の“下”に表示するSP用ボタン */
+  /* 画像の“下”に出す実ボタンを表示（PCでは非表示でOK） */
   .cta-actions{
     display: flex !important;
     flex-direction: column;
     gap: 10px;
     width: min(520px, 92vw);
-    margin: 12px auto 0;      /* 画像の下に配置 */
+    margin: 12px auto 0;
   }
   .cta-actions .cta-btn{
-    display:flex; align-items:center; justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 44px;
     border-radius: 9999px;
     font-weight: 700;
@@ -401,5 +406,5 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
   }
   .cta-actions .btn-mail{ background:#196b4f; color:#fff; }
-  .cta-actions .btn-tel { background:#fff; color:#196b4f; border:0; }
+  .cta-actions .btn-tel { background:#fff;    color:#196b4f; border:0; }
 }

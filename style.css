@@ -297,7 +297,7 @@ footer {
   width: min(1100px, 92vw);
   margin: 0 auto;
   aspect-ratio: 1920 / 420;
-  background-image: url("./images/icons/icon-contact.png");
+  background-image: url("./images/icons/icon-contact-pc.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;

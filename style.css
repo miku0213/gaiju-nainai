@@ -329,7 +329,52 @@ footer {
   height: 14%;
   text-indent: -9999px; overflow: hidden;
 }
+.cta-actions { display: none; }
+  /* SP用2ボタンを表示 */
+  .cta-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
+    position: absolute;
+    left: 50%;
+    bottom: 8%;               /* 画像の中での縦位置。低/高くしたい時はここを調整 */
+    transform: translateX(-50%);
+    width: 76%;               /* ボタン横幅（お好みで 70〜86% 程度） */
+  }
+
+  .cta-actions .cta-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;             /* ボタン高さ（お好みで） */
+    border-radius: 9999px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  }
+
+  .cta-actions .btn-mail{
+    background:#196b4f;
+    color:#fff;
+  }
+
+  .cta-actions .btn-tel{
+    background:#fff;
+    color:#196b4f;
+    border: 0;                /* 体裁を合わせるなら必要に応じて */
+  }
+
+  /* 画像の比率と横幅（SPの切れ対策） */
+  .zone-orange{ padding: 10px 0; }  /* オレンジ帯の高さ調整 */
+  .cta-band{
+    width: 94vw;
+    aspect-ratio: 1125 / 520; /* SP用の安定比率（必要なら微調整） */
+    margin: 0 auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 /* ---------- スマホ ---------- */
 @media (max-width: 600px) {
   /* STEP画像の間隔はゼロのまま */

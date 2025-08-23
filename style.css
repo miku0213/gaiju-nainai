@@ -291,19 +291,18 @@ footer {
   margin:0;
 }
 
-/* 中身のカード（icon-contact.png が切れないように配置） */
+/* --- PC共通：画像＆PC用の重ねボタン --- */
 .cta-band{
   position: relative;
   width: min(1100px, 92vw);
   margin: 0 auto;
-  aspect-ratio: 1920 / 420;             /* 画像の元比率に近い数値 */
+  aspect-ratio: 1920 / 420;
   background-image: url("./images/icons/icon-contact.png");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;             /* 全体が収まるように表示（左右が切れない） */
+  background-size: contain;
 }
-
-/* フォームボタン（位置は％で微調整） */
+/* PC用フォームボタン（画像上の緑ピル） */
 .cta-mail{
   position: absolute;
   left: 56%;
@@ -329,52 +328,7 @@ footer {
   height: 14%;
   text-indent: -9999px; overflow: hidden;
 }
-.cta-actions { display: none; }
-  /* SP用2ボタンを表示 */
-  .cta-actions{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 
-    position: absolute;
-    left: 50%;
-    bottom: 8%;               /* 画像の中での縦位置。低/高くしたい時はここを調整 */
-    transform: translateX(-50%);
-    width: 76%;               /* ボタン横幅（お好みで 70〜86% 程度） */
-  }
-
-  .cta-actions .cta-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 44px;             /* ボタン高さ（お好みで） */
-    border-radius: 9999px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  }
-
-  .cta-actions .btn-mail{
-    background:#196b4f;
-    color:#fff;
-  }
-
-  .cta-actions .btn-tel{
-    background:#fff;
-    color:#196b4f;
-    border: 0;                /* 体裁を合わせるなら必要に応じて */
-  }
-
-  /* 画像の比率と横幅（SPの切れ対策） */
-  .zone-orange{ padding: 10px 0; }  /* オレンジ帯の高さ調整 */
-  .cta-band{
-    width: 94vw;
-    aspect-ratio: 1125 / 520; /* SP用の安定比率（必要なら微調整） */
-    margin: 0 auto;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
 /* ---------- スマホ ---------- */
 @media (max-width: 600px) {
   /* STEP画像の間隔はゼロのまま */
@@ -416,20 +370,42 @@ footer {
 
 /* SP では両方タップできるように表示。位置を微調整してもOK */
 @media (max-width: 600px){
+  /* 既存（SP用の他スタイル）…はそのままでOK */
+
+  /* CTAまわり（SP） */
   .zone-orange{ padding: 10px 0; }
   .cta-band{
     width: 94vw;
     aspect-ratio: 1125 / 520;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-  .cta-mail{
-    left: 50%; top: 60%;
-    width: 62%; height: 15%;
+
+  /* PC用の重ねボタンはSPでは使わないので隠す */
+  .cta-mail, .cta-tel{ display: none; }
+
+  /* SP用：実ボタン2つを縦並びで表示 */
+  .cta-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
     transform: translateX(-50%);
-    font-size: 14px;
+    width: 76%;
   }
-  .cta-tel{
-    left: 50%; top: 77%;
-    width: 64%; height: 14%;
-    transform: translateX(-50%);
+  .cta-actions .cta-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
   }
+  .cta-actions .btn-mail{ background:#196b4f; color:#fff; }
+  .cta-actions .btn-tel{  background:#fff;    color:#196b4f; border:0; }
 }
